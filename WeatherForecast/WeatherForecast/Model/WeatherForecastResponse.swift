@@ -31,3 +31,21 @@ struct Condition: Decodable {
     let text: String
     let icon: String
 }
+
+extension ForecastDay {
+    var formattedDate: String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        inputFormatter.locale = Locale(identifier: "ru_RU")
+
+        let outputFormatter = DateFormatter()
+        outputFormatter.locale = Locale(identifier: "ru_RU")
+        outputFormatter.dateFormat = "d MMMM"
+
+        if let date = inputFormatter.date(from: self.date) {
+            return outputFormatter.string(from: date)
+        } else {
+            return self.date
+        }
+    }
+}

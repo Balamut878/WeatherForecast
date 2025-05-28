@@ -15,7 +15,7 @@ struct ContentView: View {
             List(viewModel.forecast, id: \.date) { day in
                 HStack(alignment: .top, spacing: 16) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(day.date)
+                        Text(day.formattedDate)
                             .font(.headline)
                         Text(day.day.condition.text)
                             .font(.subheadline)
