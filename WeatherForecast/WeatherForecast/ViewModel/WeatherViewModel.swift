@@ -12,7 +12,7 @@ final class WeatherViewModel: ObservableObject {
     @Published var forecast: [ForecastDay] = []
 
     func fetchWeather(for city: String = "Moscow") async {
-        let apiKey = "62fa9ebad2c840b0a28121217252805" 
+        let apiKey = "62fa9ebad2c840b0a28121217252805" // Ключ оставлю вам! Так как это тестовое задание!!!В реальном проекте понимаю что нельзя так делать!🫣
         let urlString = "https://api.weatherapi.com/v1/forecast.json?q=\(city)&days=5&key=\(apiKey)"
         
         guard let url = URL(string: urlString) else {
